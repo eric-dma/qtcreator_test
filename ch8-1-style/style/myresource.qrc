@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>image/funny.png</file>
+        <file>image/leaves.png</file>
+        <file>image/ready.png</file>
+        <file>image/smile.png</file>
+        <file>image/back.jpg</file>
+    </qresource>
+    <qresource prefix="/qss">
+        <file>my.qss</file>
+        <file>my1.qss</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,29 @@
+QMainWindow{
+        background-image: url(:/image/image/back.jpg);
+}
+QPushButton{
+        background-color: rgb(78, 134, 135);
+        border-style: outset;
+        border-width: 4px;
+        border-color: rgb(255, 111, 75);
+        font: 10pt "Forte";
+        color: rgba(7, 13, 1, 100);
+    padding: 6px;
+}
+QPushButton:hover{
+        background-color: rgb(170, 255, 127);
+        border-color: rgb(85, 0, 255);
+    color: rgba(7, 13, 1, 100);
+}
+QPushButton:pressed{
+        background-color: rgb(255, 170, 127);
+        border-color: rgb(0, 85, 255);
+    border-style: inset;
+    color: rgba(7, 130, 1, 100);
+}
+QSlider::handle:horizontal{
+        image: url(:/image/image/smile.png);
+}
+QSlider::sub-page:horizontal{
+        border-image: url(:/image/image/ready.png);
+}
