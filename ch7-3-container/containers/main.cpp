@@ -5,6 +5,9 @@
 #include <QMultiMap>
 #include <QMapIterator>
 #include <QMutableMapIterator>
+#include <QVector>
+#include <QStringList>
+#include <algorithm>
 
 int main(int argc, char *argv[])
 {
@@ -97,7 +100,7 @@ int main(int argc, char *argv[])
 //        qDebug() << p.key() << ":" << p.value();
 //    }
     //5
-    QString list;
+    QStringList list;
     list << "one" << "two" << "three";
     qDebug() << QObject::tr("copy");
     QVector<QString> vect(3);
@@ -107,6 +110,36 @@ int main(int argc, char *argv[])
     bool ret1 = std::equal(list.begin(),list.end(),vect.begin());
     qDebug() << "equal: " << ret1;
     qDebug() << endl << QObject::tr("find");
-    QList<QString>::
+    QList<QString>::iterator i = std::find(list.begin(),list.end(),"two");
+    qDebug() << *i;
+    qDebug() << endl << QObject::tr("fill");
+    std::fill(list.begin(),list.end(),"eleven");
+    qDebug() << list;
+    QList<int> list1;
+    list1 << 3 << 3 << 6 << 6 << 6 << 8;
+    qDebug() << endl << QObject::tr("count");
+    int countOf6 = std::count(list1.begin(),list1.end(),6);
+    qDebug() << "countOf6" << countOf6;
+    qDebug() << endl << QObject::tr("lower_bound:");
+    QList<int>::iterator j = std::lower_bound(list1.begin(),list1.end(),5);
+    list1.insert(j,5);
+    qDebug() << list1;
+    QList<int> list2;
+    list2 << 33 << 23 << 45 << 12;
+    qDebug() << endl << QObject::tr("sort:");
+    std::sort(list2.begin(),list2.end());
+    qDebug() << list2;
+    qDebug() << endl << QObject::tr("stable_sort:");
+    std::stable_sort(list2.begin(),list2.end());
+    qDebug() << list2;
+    qDebug() << endl << QObject::tr("greater:");
+    qSort(list2.begin(),list2.end(),std::greater<int>());
+    qDebug() << list2;
+    qDebug() << endl << QObject::tr("swap:");
+    double pi = 3.14;
+    double e = 2.7;
+    std::swap(pi, e);
+    qDebug() << "pi:" << pi << ", e:" << e;
+
     return a.exec();
 }
