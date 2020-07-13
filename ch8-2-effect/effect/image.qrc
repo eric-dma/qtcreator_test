@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>images/chiplight.jpg</file>
+        <file>images/funny.png</file>
+    </qresource>
+</RCC>
